@@ -41,10 +41,19 @@ INSTALLATION
 	  </code></pre>
 
 2. Add the following to your products page
-  <pre><code>'<%= display_bookmarks(@product.name, product_url(@product) %></code></pre>
+  <pre><code><%= display_bookmarks(@product.name, product_url(@product) %></code></pre>
 
 3. You can also add bookmarks to none product pages, just pass a title or name
    <pre><code><%= display_bookmarks(@blog.title) %></code></pre>
+   
+4. You can turn off specific bookmarks in the configuration file.
+  <pre><code>
+    # lib/social_bookmarks_configuration.rb
+    class SocialBookmarksConfiguration < Configuration
+      preference :ask, 			:boolean, :default => 1 # switch to 0 to hide bookmark in the view
+      ...
+    end
+  </code></pre>
 
 CREDITS
 --------
