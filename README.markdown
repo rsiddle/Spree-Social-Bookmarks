@@ -4,29 +4,47 @@ SUMMARY
 This extension allows you to add social bookmarking to your products so your customers can share pages.
 
 Current bookmarks include: 
-delicious
-digg
-reddit
-blinklist
-dzone
-newsvine
-furl
-spurl
-simpy
-fark
-blogmarks
-myweb2
-wists
+* ask
+* blinklist
+* blogmarks
+* delicious
+* digg
+* reddit
+* dzone
+* facebook
+* fark
+* furl
+* google bookmarks
+* magnolia
+* netscape
+* newsvine
+* reddit
+* shoutwire
+* simpy
+* slashdot
+* spurl
+* stumbleupon
+* swik
+* technorati
+* windows live
+* yahoo myweb2
 
 INSTALLATION
 ------------
 
 1. Install the extension with one of the following commands
 
-      git clone git://github.com/wsmedia/spree-social-bookmarks.git
+      <pre><code>
+	  git clone git://github.com/wsmedia/spree-social-bookmarks.git
+	  
       script/extension install git://github.com/wsmedia/spree-social-bookmarks.git
+	  </code></pre>
 
-2. Add '<%= display_bookmarks(@product.name, product_url(@product) %> on your product show template or <%= display_bookmarks(@blog.title) %> to display social bookmarks on your blog.
+2. Add the following to your products page
+  <pre><code>'<%= display_bookmarks(@product.name, product_url(@product) %></code></pre>
+
+3. You can also add bookmarks to none product pages, just pass a title or name
+   <pre><code><%= display_bookmarks(@blog.title) %></code></pre>
 
 CREDITS
 --------
