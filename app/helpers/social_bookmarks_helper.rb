@@ -1,3 +1,5 @@
+require 'ruby-debug'
+
 module SocialBookmarksHelper
   
   # Dislay the social bookmarks
@@ -5,7 +7,14 @@ module SocialBookmarksHelper
   # <%= display_bookmarks(@product.name) %> which will use the current URI request
   
   def display_bookmarks(title = "", url = nil)
-    @controller.display_bookmarks(title, url)
+    if (url == nil)
+      url = request.env["REQUEST_URI"]
+      url = 'http://'+request.env["HTTP_HOST"] + request.fullpath if url.nil? or url.eql?(url.gsub(/http:/,'').gsub(/HTTP:/,''))
+    elsif url.eql?(url.gsub(/http:/,'').gsub(/HTTP:/,''))
+      url = 'http://'+request.env["HTTP_HOST"]+url
+    end
+	
+    render :partial => 'shared/bookmarks', :locals => { :title => title, :url => url }
   end
-
+  
 end
