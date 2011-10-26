@@ -1,0 +1,130 @@
+<% content_for :head do -%>
+  <%= stylesheet_link_tag 'bookmarks' %>
+<% end -%>
+<div class="bookmarks">
+  <% if Spree::SocialBookmarks::Config[:facebook] == 1 -%>
+   <a title="Add '<%= title %>' to Facebook" href="  http://www.facebook.com/sharer.php?u=<%= url %>&t=<%= title %>" target="_blank" rel="nofollow">
+      <img alt="Add to Facebook" src="/images/bookmark-icons/facebook.gif" />
+   </a>
+  <% end -%>
+  <% if Spree::SocialBookmarks::Config[:delicious] == 1 -%>
+   <a title="Add '<%= title %>' to Del.icio.us" href="http://del.icio.us/post?url=<%= url %>&title=<%= title %>" target="_blank" rel="nofollow">
+      <img alt="Add to del.icio.us" src="/images/bookmark-icons/delicious.gif" />
+   </a>
+  <% end -%>
+  <% if Spree::SocialBookmarks::Config[:digg] == 1 -%>
+   <a title="Digg '<%= title %>' on Digg.com" href="http://digg.com/submit?phase=2&url=<%= url %>" target="_blank" rel="nofollow">
+      <img alt="Digg on Digg.com" src="/images/bookmark-icons/digg.gif" />
+   </a>
+  <% end -%>
+  <% if Spree::SocialBookmarks::Config[:reddit] == 1 -%>
+   <a title="Submit '<%= title %>' to reddit.com" href="http://reddit.com/submit?url=<%= url %>" target="_blank" rel="nofollow">
+      <img alt="Submit to reddit.com" src="/images/bookmark-icons/reddit.gif" />
+   </a>
+  <% end -%>
+  <% if Spree::SocialBookmarks::Config[:blinklist] == 1 -%>
+   <a title="Blink '<%= title %>'" href="http://www.blinklist.com/index.php?Action=Blink/addblink.php&Url=<%= url %>&Title=<%= title %>" target="_blank" rel="nofollow">
+      <img alt="Blink" src="/images/bookmark-icons/blinklist.gif" />
+   </a>
+  <% end -%>
+  <% if Spree::SocialBookmarks::Config[:dzone] == 1 -%>
+   <a title="Add '<%= title %>' to dzone" href="http://www.dzone.com/links/add.html?description=&url=<%= url %>&title=<%= title %>" target="_blank" rel="nofollow">
+      <img alt="dzone" title="Add <%= title %> to dzone" src="/images/bookmark-icons/dzone.png" />
+   </a>
+  <% end -%>
+  <% if Spree::SocialBookmarks::Config[:newsvine] == 1 -%>
+   <a title="Seed '<%= title %>' on Newsvine" href="http://www.newsvine.com/_tools/seed&save?u=<%= url %>&h=<%= title %>" target="_blank" rel="nofollow">
+      <img alt="Seed on Newsvine" src="/images/bookmark-icons/newsvine.gif" />
+   </a>
+  <% end -%>
+  <% if Spree::SocialBookmarks::Config[:furl] == 1 -%>
+   <a title="Add '<%= title %>' to Furl" href="http://www.furl.net/storeIt.jsp?u=<%= url %>%t=<%= title %>" target="_blank" rel="nofollow">
+      <img alt="Add to Furl" src="/images/bookmark-icons/furl.gif" />
+   </a>
+  <% end -%>
+  <% if Spree::SocialBookmarks::Config[:spurl] == 1 -%>
+   <a title="Add '<%= title %>' to Spurl" href="http://www.spurl.net/spurl.php?url=<%= url %>&title=<%= title %>" target="_blank" rel="nofollow">
+      <img alt="Add to Spurl" src="/images/bookmark-icons/spurl.png" />
+   </a>
+  <% end -%>
+	<% if Spree::SocialBookmarks::Config[:simpy] == 1 -%>
+   <a title="Add '<%= title %>' on simpy.com" href="http://www.simpy.com/simpy/LinkAdd.do?href=<%= url %>&amp;title=<%= title %>" target="_blank" rel="nofollow">
+      <img alt="Simpy.com" src="/images/bookmark-icons/simpy.png" />
+   </a>
+  <% end -%>
+	<% if Spree::SocialBookmarks::Config[:fark] == 1 -%>
+   <a title="Add '<%= title %>' to fark.com" href="http://cgi.fark.com/cgi/fark/edit.pl?new_url=<%= url %>&amp;new_comment=<%= title %>&amp;new_link_other=&amp;linktype=Misc" target="_blank" rel="nofollow">
+      <img alt="Fark.com" src="/images/bookmark-icons/fark.png" />
+   </a>
+  <% end -%>
+	<% if Spree::SocialBookmarks::Config[:blogmarks] == 1 -%>
+   <a title="BlogMark '<%= title %>'" href="http://blogmarks.net/my/new.php?mini=1&simple=1&url=<%= url %>title=<%= title %>" target="_blank" rel="nofollow">
+      <img alt="BlogMark" src="/images/bookmark-icons/blogmarks.png" />
+   </a>
+  <% end -%>
+	<% if Spree::SocialBookmarks::Config[:myweb2] == 1 -%>
+   <a title="Add '<%= title %>' to Yahoo! myweb2" href="http://myweb2.search.yahoo.com/myresults/bookmarklet?u=<%= url %>&amp;t=<%= title %>" target="_blank" rel="nofollow">
+      <img alt="Yahoo! myweb2" src="/images/bookmark-icons/yahoomyweb.gif" />
+   </a>
+  <% end -%>
+  <% if Spree::SocialBookmarks::Config[:wists] == 1 -%>
+   <a title="Add '<%= title %>' to wists.com" href="http://wists.com/r.php?c=&r=<%= url %>&title=<%= title %>" target="_blank" rel="nofollow">
+      <img alt="wists.com" src="/images/bookmark-icons/wists.png" />
+   </a>
+  <% end -%>
+  <% if Spree::SocialBookmarks::Config[:windowslive] == 1 -%>
+   <a title="Add '<%= title %>' to Windows Live" href="http://wists.com/r.php?c=&r=<%= url %>&title=<%= title %>" target="_blank" rel="nofollow">
+      <img alt="Windows Live" src="/images/bookmark-icons/windowslive.gif" />
+   </a>
+  <% end -%>
+  <% if Spree::SocialBookmarks::Config[:ask] == 1 -%>
+   <a title="Add '<%= title %>' to Ask.com" href="http://myjeeves.ask.com/mysearch/BookmarkIt?v=1.2&t=webpages&url=<%= url %>&title=<%= title %>" target="_blank" rel="nofollow">
+      <img alt="Ask.com" src="/images/bookmark-icons/ask.gif" />
+   </a>
+  <% end -%>
+  <% if Spree::SocialBookmarks::Config[:technorati] == 1 -%>
+   <a title="Add '<%= title %>' to Technorati" href="http://www.technorati.com/faves?add=<%= url %>" target="_blank" rel="nofollow">
+      <img alt="Technorati" src="/images/bookmark-icons/technorati.gif" />
+   </a>
+  <% end -%>
+  <% if Spree::SocialBookmarks::Config[:stumbleupon] == 1 -%>
+   <a title="Add '<%= title %>' to StumbleUpon" href="http://www.stumbleupon.com/submit?url=<%= url %>&title=<%= title %>" target="_blank" rel="nofollow">
+      <img alt="StumbleUpon" src="/images/bookmark-icons/stumbleupon.gif" />
+   </a>
+  <% end -%>
+  <% if Spree::SocialBookmarks::Config[:squidoo] == 1 -%>
+   <a title="Add '<%= title %>' to Squidoo" href="http://www.squidoo.com/lensmaster/bookmark?<%= url %>" target="_blank" rel="nofollow">
+      <img alt="Squidoo" src="/images/bookmark-icons/squidoo.gif" />
+   </a>
+  <% end -%>
+  <% if Spree::SocialBookmarks::Config[:netscape] == 1 -%>
+   <a title="Add '<%= title %>' to NetScape" href="http://www.netscape.com/submit/?U=<%= url %>&T=<%= title %>" target="_blank" rel="nofollow">
+      <img alt="NetScape" src="/images/bookmark-icons/netscape.gif" />
+   </a>
+  <% end -%>
+  <% if Spree::SocialBookmarks::Config[:slashdot] == 1 -%>
+   <a title="Add '<%= title %>' to SlashDot" href="http://slashdot.org/bookmark.pl?url=<%= url %>&title=<%= title %>" target="_blank" rel="nofollow">
+      <img alt="SlashDot" src="/images/bookmark-icons/slashdot.gif" />
+   </a>
+  <% end -%>
+  <% if Spree::SocialBookmarks::Config[:magnolia] == 1 -%>
+   <a title="Add '<%= title %>' to ma.gnolia" href="http://ma.gnolia.com/bookmarklet/add?url=<%= url %>&title=<%= title %>" target="_blank" rel="nofollow">
+      <img alt="ma.gnolia" src="/images/bookmark-icons/magnolia.gif" />
+   </a>
+  <% end -%>
+  <% if Spree::SocialBookmarks::Config[:swik] == 1 -%>
+   <a title="Add '<%= title %>' to SWiK" href="http://stories.swik.net/?submitUrl&url=<%= url %>" target="_blank" rel="nofollow">
+      <img alt="SWiK" src="/images/bookmark-icons/swik.gif" />
+   </a>
+  <% end -%>
+  <% if Spree::SocialBookmarks::Config[:google] == 1 -%>
+   <a title="Add '<%= title %>' to Google Bookmarks" href="http://www.google.com/bookmarks/mark?op=edit&bkmk=<%= url %>&title=<%= title %>" target="_blank" rel="nofollow">
+      <img alt="Google Bookmarks" src="/images/bookmark-icons/googlebookmarks.gif" />
+   </a>
+  <% end -%>
+  <% if Spree::SocialBookmarks::Config[:shoutwire] == 1 -%>
+   <a title="Add '<%= title %>' to ShoutWire" href="http://www.shoutwire.com/?p=submit&link=<%= url %>" target="_blank" rel="nofollow">
+      <img alt="ShoutWire" src="/images/bookmark-icons/shoutwire.gif" />
+   </a>
+  <% end -%>
+</div>
