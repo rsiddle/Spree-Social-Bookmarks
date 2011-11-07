@@ -1,4 +1,5 @@
 <div class="bookmarks">
+	Share: 
   <% if Spree::SocialBookmarks::Config[:facebook]%>
    <a title="Add '<%= title %>' to Facebook" href="  http://www.facebook.com/sharer.php?u=<%= url %>&t=<%= title %>" target="_blank" rel="nofollow">
       <img alt="Add to Facebook" src="<%=Spree::SocialBookmarks::Config[:image_path]%>facebook.png" />
@@ -125,7 +126,9 @@
    </a>
   <% end -%>
   <a title="Add '<%= title %>' to Twitter" href="http://twitter.com/home?status=<%= url %>" target="_blank" rel="nofollow">
-     <img alt="ShoutWire" src="<%=Spree::SocialBookmarks::Config[:image_path]%>twitter.png" />
+     <img alt="Twitter" src="<%=Spree::SocialBookmarks::Config[:image_path]%>twitter.png" />
   </a>
-
+  <a title="Add '<%= title %>' to Twitter" href="<%=email_to_friend_url('product', @product)%>" target="_blank" rel="nofollow">
+     <img alt="ShoutWire" src="<%=Spree::SocialBookmarks::Config[:image_path]%>email.png" />
+  </a>
 </div>
