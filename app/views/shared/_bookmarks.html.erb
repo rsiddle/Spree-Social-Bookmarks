@@ -125,10 +125,14 @@
       <img alt="ShoutWire" src="<%=Spree::SocialBookmarks::Config[:image_path]%>shoutwire.png" />
    </a>
   <% end -%>
+  <% if Spree::SocialBookmarks::Config[:twitter]%>
   <a title="Add '<%= title %>' to Twitter" href="http://twitter.com/home?status=<%= url %>" target="_blank" rel="nofollow">
      <img alt="Twitter" src="<%=Spree::SocialBookmarks::Config[:image_path]%>twitter.png" />
   </a>
-  <a title="Add '<%= title %>' to Twitter" href="<%=email_to_friend_url('product', @product)%>" target="_blank" rel="nofollow">
+  <%end-%>
+  <% if Spree::SocialBookmarks::Config[:email]%>
+  <a title="Email '<%= title %>' to a Friend" href="<%=email_to_friend_url('product', @product)%>" target="_blank" rel="nofollow">
      <img alt="ShoutWire" src="<%=Spree::SocialBookmarks::Config[:image_path]%>email.png" />
   </a>
+  <%end-%>
 </div>

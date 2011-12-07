@@ -23,5 +23,7 @@ class SocialBookmarksConfiguration < Configuration
   preference :technorati, 	:boolean, :default => false
   preference :windowslive, 	:boolean, :default => 0
   preference :myweb2, 		:boolean, :default => false
+  preference :twitter,    :boolean, :default => true
+  preference :email,      :boolean, :default => true
   preference :image_path, :string, :default => "/assets/store/social/"
 end
