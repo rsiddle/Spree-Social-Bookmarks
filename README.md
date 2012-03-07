@@ -1,20 +1,10 @@
-SpreeSocialBookmark
-===================
+#SpreeSocialBookmarks
 
-Introduction goes here.
+Easily add social links to your product pages:
 
+	<%= display_bookmarks%>
+	<%= display_bookmarks("Title", "http://url.com/to/product-page") %>
 
-Example
-=======
+You'll need to add social images to your `/assets/store/social` path (you can modify the path pointing to social images via preferences)
 
-Example goes here.
-
-Testing
--------
-
-Be sure to add the rspec-rails gem to your Gemfile and then create a dummy test app for the specs to run against.
-
-    $ bundle exec rake test app
-    $ bundle exec rspec spec
-
-Copyright (c) 2011 [name of extension creator], released under the New BSD License
+Supports the "spree_email_to_friend" extension.

@@ -1,4 +1,5 @@
-"0.70.x" => { :branch => "master"}
+"0.70.x" => { :tag => "0.7"}
+"1.0.x" => { :branch => "master" }
 
 # Examples
 # "0.60.x" => { :branch => "0-60-stable" }

@@ -2,13 +2,13 @@
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'spree_social_bookmarks'
-  s.version     = '0.70.1'
-  s.summary     = 'Add gem summary here'
+  s.version     = '1.0'
+  s.summary     = 'Easily add social bookmarks to your spree app'
   s.description = 'Add (optional) gem description here'
   s.required_ruby_version = '>= 1.8.7'
 
-  # s.author            = 'David Heinemeier Hansson'
-  # s.email             = 'david@loudthinking.com'
+  s.author            = 'Michael Bianco'
+  s.email             = 'info@cliffsidedev.com'
   # s.homepage          = 'http://www.rubyonrails.org'
   # s.rubyforge_project = 'actionmailer'
 
