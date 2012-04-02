@@ -2,7 +2,7 @@
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'spree_social_bookmarks'
-  s.version     = '1.0'
+  s.version     = '1.1.0'
   s.summary     = 'Easily add social bookmarks to your spree app'
   s.description = 'Add (optional) gem description here'
   s.required_ruby_version = '>= 1.8.7'

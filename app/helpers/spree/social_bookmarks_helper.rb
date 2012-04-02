@@ -21,7 +21,7 @@ module Spree
         title = product_or_url.name if title.nil?
       end
 
-      render :partial => 'shared/bookmarks', :locals => {
+      render :partial => 'spree/shared/bookmarks', :locals => {
         :title => title,
         :url => url,
         :product => product
