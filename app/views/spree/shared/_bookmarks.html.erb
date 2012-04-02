@@ -154,7 +154,7 @@ end
   </a>
   <%end-%>
   <% if Spree::SocialBookmarks::Config[:pinterest] %>
-  <a title="Add '<%= title %>' to Pinterest" href="http://pinterest.com/pin/create/button/?url=<%= url %>">
+  <a title="Add '<%= title %>' to Pinterest" href="http://pinterest.com/pin/create/button/?url=<%= url %>&amp;media=<%= image %>">
 	  <img alt="Twitter" src="<%=Spree::SocialBookmarks::Config[:image_path]%>pinterest.png" />
   </a>
   <% end %>
