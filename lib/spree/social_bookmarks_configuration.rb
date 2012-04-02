@@ -29,7 +29,9 @@ module Spree
     preference :wists,      :boolean, :default => false
     preference :magnolia,    :boolean, :default => false
     preference :twitter,    :boolean, :default => true
+    preference :pinterest,  :boolean, :default => true
     preference :email,      :boolean, :default => true
+    preference :meta_tags,  :boolean, :default => true
     preference :image_path, :string, :default => "/assets/store/social/"
   end
 end
