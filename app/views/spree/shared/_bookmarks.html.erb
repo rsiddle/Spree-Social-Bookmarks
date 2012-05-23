@@ -6,7 +6,6 @@ if Spree::SocialBookmarks::Config[:meta_tags]
 		:type => :website
 	}
 	
-	Rails.logger.info "THE GRAPH #{open_graph}"
 	unless product.nil?
 		open_graph[:image] = request.protocol + request.host + product.images.first.attachment.url if product.images.count > 0
 		open_graph[:description] = strip_tags product.description
@@ -22,7 +21,7 @@ if Spree::SocialBookmarks::Config[:meta_tags]
 end
 %>
 <div class="bookmarks">
-	Share: 
+	<%= t(:bookmarks_share) %>
   <% if Spree::SocialBookmarks::Config[:facebook]%>
    <a title="Add '<%= title %>' to Facebook" href="  http://www.facebook.com/sharer.php?u=<%= url %>&t=<%= title %>" target="_blank" rel="nofollow">
       <img alt="Add to Facebook" src="<%=Spree::SocialBookmarks::Config[:image_path]%>facebook.png" />
