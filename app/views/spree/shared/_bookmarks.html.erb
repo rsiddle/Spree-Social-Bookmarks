@@ -1,5 +1,27 @@
+<%
+if Spree::SocialBookmarks::Config[:meta_tags]
+	open_graph = {
+		:title => title,
+		:url => url,
+		:type => :website
+	}
+	
+	unless product.nil?
+		open_graph[:image] = request.protocol + request.host + product.images.first.attachment.url if product.images.count > 0
+		open_graph[:description] = strip_tags product.description
+	end
+	
+	content_for :head do
+		open_graph.each do |property, content|
+		%>
+<%= tag(:meta, :property => "og:#{property}", :content => content) %>
+<%
+		end
+	end
+end
+%>
 <div class="bookmarks">
-	Share: 
+	<%= t(:bookmarks_share) %>
   <% if Spree::SocialBookmarks::Config[:facebook]%>
    <a title="Add '<%= title %>' to Facebook" href="  http://www.facebook.com/sharer.php?u=<%= url %>&t=<%= title %>" target="_blank" rel="nofollow">
       <img alt="Add to Facebook" src="<%=Spree::SocialBookmarks::Config[:image_path]%>facebook.png" />
@@ -130,7 +152,12 @@
      <img alt="Twitter" src="<%=Spree::SocialBookmarks::Config[:image_path]%>twitter.png" />
   </a>
   <%end-%>
-  <% if Rails::Engine.descendants.map(&:engine_name).include? "spree_email_to_friend" and Spree::SocialBookmarks::Config[:email]%>
+  <% if Spree::SocialBookmarks::Config[:pinterest] %>
+  <a title="Add '<%= title %>' to Pinterest" href="http://pinterest.com/pin/create/button/?url=<%= url %>&amp;media=<%= image %>">
+	  <img alt="Twitter" src="<%=Spree::SocialBookmarks::Config[:image_path]%>pinterest.png" />
+  </a>
+  <% end %>
+  <% if Spree::SocialBookmarks::Config[:email] and Rails::Engine.descendants.map(&:engine_name).include? "spree_email_to_friend"%>
   <a title="Email '<%= title %>' to a Friend" href="<%=email_to_friend_url('product', @product)%>" target="_blank" rel="nofollow">
      <img alt="ShoutWire" src="<%=Spree::SocialBookmarks::Config[:image_path]%>email.png" />
   </a>
