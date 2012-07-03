@@ -9,12 +9,11 @@ module Spree
       image = nil
       
       if product_or_url.nil?
-        Rails.logger.info "HUH?"
+        # TODO there has to be a better way to handle this
         url = request.env["REQUEST_URI"]
         url = 'http://'+request.host + request.fullpath if url.nil? or url.eql?(url.gsub(/http:/,'').gsub(/HTTP:/,''))
       elsif product_or_url.class == String and url.eql?(url.gsub(/http:/,'').gsub(/HTTP:/,''))
         url = 'http://'+request.host + url
-        Rails.logger.info "NOWAY"
       elsif product_or_url.class == Spree::Product
         url = polymorphic_url product_or_url
 
