@@ -8,7 +8,7 @@ if Spree::SocialBookmarks::Config[:meta_tags]
 	
 	unless product.nil?
 		open_graph[:image] = request.protocol + request.host + product.images.first.attachment.url if product.images.count > 0
-		open_graph[:description] = strip_tags product.description
+		open_graph[:description] = description
 	end
 	
 	content_for :head do
